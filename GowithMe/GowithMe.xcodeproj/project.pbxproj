@@ -8,11 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		9344D12E1A739C1E00748031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344D12D1A739C1E00748031 /* AppDelegate.swift */; };
-		9344D1301A739C1E00748031 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344D12F1A739C1E00748031 /* ViewController.swift */; };
 		9344D1331A739C1E00748031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9344D1311A739C1E00748031 /* Main.storyboard */; };
 		9344D1351A739C1E00748031 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9344D1341A739C1E00748031 /* Images.xcassets */; };
 		9344D1381A739C1E00748031 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9344D1361A739C1E00748031 /* LaunchScreen.xib */; };
 		9344D1441A739C1E00748031 /* GowithMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344D1431A739C1E00748031 /* GowithMeTests.swift */; };
+		936787241A7FC0B500600844 /* GWMAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787231A7FC0B500600844 /* GWMAnnotation.swift */; };
+		936787251A7FC0B500600844 /* GWMAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787231A7FC0B500600844 /* GWMAnnotation.swift */; };
+		936787271A7FC0D400600844 /* GWMMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787261A7FC0D400600844 /* GWMMapViewController.swift */; };
+		936787281A7FC0D400600844 /* GWMMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787261A7FC0D400600844 /* GWMMapViewController.swift */; };
+		936787331A80F1CB00600844 /* GWMFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787321A80F1CB00600844 /* GWMFriendViewController.swift */; };
+		936787341A80F1CB00600844 /* GWMFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787321A80F1CB00600844 /* GWMFriendViewController.swift */; };
+		936787361A80F77000600844 /* GWMContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787351A80F77000600844 /* GWMContacts.swift */; };
+		936787371A80F77000600844 /* GWMContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787351A80F77000600844 /* GWMContacts.swift */; };
+		936787391A80F83E00600844 /* GWMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787381A80F83E00600844 /* GWMFriend.swift */; };
+		9367873A1A80F83E00600844 /* GWMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787381A80F83E00600844 /* GWMFriend.swift */; };
+		DD514BC21A78B84A004CF14D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD514BC11A78B84A004CF14D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +39,18 @@
 		9344D1281A739C1E00748031 /* GowithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GowithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9344D12C1A739C1E00748031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9344D12D1A739C1E00748031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9344D12F1A739C1E00748031 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9344D1321A739C1E00748031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9344D1341A739C1E00748031 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9344D1371A739C1E00748031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9344D13D1A739C1E00748031 /* GowithMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GowithMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9344D1421A739C1E00748031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9344D1431A739C1E00748031 /* GowithMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GowithMeTests.swift; sourceTree = "<group>"; };
+		936787231A7FC0B500600844 /* GWMAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GWMAnnotation.swift; path = MapView/GWMAnnotation.swift; sourceTree = "<group>"; };
+		936787261A7FC0D400600844 /* GWMMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GWMMapViewController.swift; path = MapView/GWMMapViewController.swift; sourceTree = "<group>"; };
+		936787321A80F1CB00600844 /* GWMFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriendViewController.swift; sourceTree = "<group>"; };
+		936787351A80F77000600844 /* GWMContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMContacts.swift; sourceTree = "<group>"; };
+		936787381A80F83E00600844 /* GWMFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriend.swift; sourceTree = "<group>"; };
+		DD514BC11A78B84A004CF14D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD514BC21A78B84A004CF14D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +77,7 @@
 			children = (
 				9344D12A1A739C1E00748031 /* GowithMe */,
 				9344D1401A739C1E00748031 /* GowithMeTests */,
+				DD514BBE1A78B820004CF14D /* Frameworks */,
 				9344D1291A739C1E00748031 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,11 +94,8 @@
 		9344D12A1A739C1E00748031 /* GowithMe */ = {
 			isa = PBXGroup;
 			children = (
-				9344D12D1A739C1E00748031 /* AppDelegate.swift */,
-				9344D12F1A739C1E00748031 /* ViewController.swift */,
-				9344D1311A739C1E00748031 /* Main.storyboard */,
-				9344D1341A739C1E00748031 /* Images.xcassets */,
-				9344D1361A739C1E00748031 /* LaunchScreen.xib */,
+				936787311A80F1A700600844 /* FriendsView */,
+				936787221A7FC07600600844 /* MapView */,
 				9344D12B1A739C1E00748031 /* Supporting Files */,
 			);
 			path = GowithMe;
@@ -90,6 +104,10 @@
 		9344D12B1A739C1E00748031 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9344D1311A739C1E00748031 /* Main.storyboard */,
+				9344D1341A739C1E00748031 /* Images.xcassets */,
+				9344D1361A739C1E00748031 /* LaunchScreen.xib */,
+				9344D12D1A739C1E00748031 /* AppDelegate.swift */,
 				9344D12C1A739C1E00748031 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +128,33 @@
 				9344D1421A739C1E00748031 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		936787221A7FC07600600844 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				936787261A7FC0D400600844 /* GWMMapViewController.swift */,
+				936787231A7FC0B500600844 /* GWMAnnotation.swift */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		936787311A80F1A700600844 /* FriendsView */ = {
+			isa = PBXGroup;
+			children = (
+				936787321A80F1CB00600844 /* GWMFriendViewController.swift */,
+				936787351A80F77000600844 /* GWMContacts.swift */,
+				936787381A80F83E00600844 /* GWMFriend.swift */,
+			);
+			path = FriendsView;
+			sourceTree = "<group>";
+		};
+		DD514BBE1A78B820004CF14D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD514BC11A78B84A004CF14D /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +206,12 @@
 				TargetAttributes = {
 					9344D1271A739C1E00748031 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9KZD7Y4SX6;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					9344D13C1A739C1E00748031 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -212,8 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9344D1301A739C1E00748031 /* ViewController.swift in Sources */,
 				9344D12E1A739C1E00748031 /* AppDelegate.swift in Sources */,
+				936787391A80F83E00600844 /* GWMFriend.swift in Sources */,
+				936787241A7FC0B500600844 /* GWMAnnotation.swift in Sources */,
+				936787361A80F77000600844 /* GWMContacts.swift in Sources */,
+				936787331A80F1CB00600844 /* GWMFriendViewController.swift in Sources */,
+				936787271A7FC0D400600844 /* GWMMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9344D1441A739C1E00748031 /* GowithMeTests.swift in Sources */,
+				9367873A1A80F83E00600844 /* GWMFriend.swift in Sources */,
+				936787251A7FC0B500600844 /* GWMAnnotation.swift in Sources */,
+				936787371A80F77000600844 /* GWMContacts.swift in Sources */,
+				936787341A80F1CB00600844 /* GWMFriendViewController.swift in Sources */,
+				936787281A7FC0D400600844 /* GWMMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +396,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GowithMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -346,9 +409,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GowithMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -405,6 +471,7 @@
 				9344D1491A739C1E00748031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9344D14A1A739C1E00748031 /* Build configuration list for PBXNativeTarget "GowithMeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +480,7 @@
 				9344D14C1A739C1E00748031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
