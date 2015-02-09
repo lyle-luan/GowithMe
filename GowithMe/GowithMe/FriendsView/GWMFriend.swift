@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Aaron. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class GWMFriend

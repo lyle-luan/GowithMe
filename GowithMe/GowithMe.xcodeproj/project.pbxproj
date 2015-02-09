@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9316AB3A1A8355440027AC7C /* GWMSelectedFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9316AB391A8355440027AC7C /* GWMSelectedFriendsViewController.swift */; };
+		9316AB3B1A8355440027AC7C /* GWMSelectedFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9316AB391A8355440027AC7C /* GWMSelectedFriendsViewController.swift */; };
+		9316AB3D1A83556B0027AC7C /* GWMActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9316AB3C1A83556B0027AC7C /* GWMActionsViewController.swift */; };
+		9316AB3E1A83556B0027AC7C /* GWMActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9316AB3C1A83556B0027AC7C /* GWMActionsViewController.swift */; };
+		9316AB401A83573A0027AC7C /* GWMSelectedFriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9316AB3F1A83573A0027AC7C /* GWMSelectedFriendsModel.swift */; };
+		9316AB411A83573A0027AC7C /* GWMSelectedFriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9316AB3F1A83573A0027AC7C /* GWMSelectedFriendsModel.swift */; };
 		9344D12E1A739C1E00748031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9344D12D1A739C1E00748031 /* AppDelegate.swift */; };
 		9344D1331A739C1E00748031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9344D1311A739C1E00748031 /* Main.storyboard */; };
 		9344D1351A739C1E00748031 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9344D1341A739C1E00748031 /* Images.xcassets */; };
@@ -36,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9316AB391A8355440027AC7C /* GWMSelectedFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMSelectedFriendsViewController.swift; sourceTree = "<group>"; };
+		9316AB3C1A83556B0027AC7C /* GWMActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMActionsViewController.swift; sourceTree = "<group>"; };
+		9316AB3F1A83573A0027AC7C /* GWMSelectedFriendsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMSelectedFriendsModel.swift; sourceTree = "<group>"; };
 		9344D1281A739C1E00748031 /* GowithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GowithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9344D12C1A739C1E00748031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9344D12D1A739C1E00748031 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				936787321A80F1CB00600844 /* GWMFriendViewController.swift */,
+				9316AB391A8355440027AC7C /* GWMSelectedFriendsViewController.swift */,
+				9316AB3C1A83556B0027AC7C /* GWMActionsViewController.swift */,
+				9316AB3F1A83573A0027AC7C /* GWMSelectedFriendsModel.swift */,
 				936787351A80F77000600844 /* GWMContacts.swift */,
 				936787381A80F83E00600844 /* GWMFriend.swift */,
 			);
@@ -263,10 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9316AB3A1A8355440027AC7C /* GWMSelectedFriendsViewController.swift in Sources */,
 				9344D12E1A739C1E00748031 /* AppDelegate.swift in Sources */,
 				936787391A80F83E00600844 /* GWMFriend.swift in Sources */,
 				936787241A7FC0B500600844 /* GWMAnnotation.swift in Sources */,
+				9316AB3D1A83556B0027AC7C /* GWMActionsViewController.swift in Sources */,
 				936787361A80F77000600844 /* GWMContacts.swift in Sources */,
+				9316AB401A83573A0027AC7C /* GWMSelectedFriendsModel.swift in Sources */,
 				936787331A80F1CB00600844 /* GWMFriendViewController.swift in Sources */,
 				936787271A7FC0D400600844 /* GWMMapViewController.swift in Sources */,
 			);
@@ -276,10 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9316AB3B1A8355440027AC7C /* GWMSelectedFriendsViewController.swift in Sources */,
 				9344D1441A739C1E00748031 /* GowithMeTests.swift in Sources */,
 				9367873A1A80F83E00600844 /* GWMFriend.swift in Sources */,
 				936787251A7FC0B500600844 /* GWMAnnotation.swift in Sources */,
+				9316AB3E1A83556B0027AC7C /* GWMActionsViewController.swift in Sources */,
 				936787371A80F77000600844 /* GWMContacts.swift in Sources */,
+				9316AB411A83573A0027AC7C /* GWMSelectedFriendsModel.swift in Sources */,
 				936787341A80F1CB00600844 /* GWMFriendViewController.swift in Sources */,
 				936787281A7FC0D400600844 /* GWMMapViewController.swift in Sources */,
 			);

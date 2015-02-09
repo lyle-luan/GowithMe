@@ -56,7 +56,7 @@ class GWMContacts
 
     }
     
-    func friendInCatalogue(catalogue: Int, number: Int) -> GWMFriend
+    func friendInCatalogue(#catalogue: Int, number: Int) -> GWMFriend
     {
         switch(catalogue)
         {
