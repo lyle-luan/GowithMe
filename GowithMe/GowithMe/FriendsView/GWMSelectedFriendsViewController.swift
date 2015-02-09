@@ -16,7 +16,7 @@ class GWMSelectedFriendsViewController: UIViewController
     {
         didSet
         {
-//            selectedFriends.addObserver(self, forKeyPath:KVOSelectedFriendsList, options:.New, context:nil)
+            selectedFriends.addObserver(self, forKeyPath:KVOSelectedFriendsList, options:.New, context:nil)
         }
     }
     
@@ -24,6 +24,17 @@ class GWMSelectedFriendsViewController: UIViewController
     {
         super.viewDidLoad()
         view.backgroundColor = UIColor.grayColor()
+    }
+    
+    func updateView(selectedFriends:[GWMFriend]?)
+    {
+        if let selectedFriends = selectedFriends
+        {
+            for friend in selectedFriends
+            {
+                println("friend name: \(friend.name)")
+            }
+        }
     }
 }
 
@@ -37,12 +48,31 @@ extension GWMSelectedFriendsViewController
         }
         else if keyPath == KVOSelectedFriendsList
         {
-            let newSelectedFriends = change[NSKeyValueChangeNewKey] as? GWMSelectedFriendsModel
-            if let hasNewSelectedFriends = newSelectedFriends
+            let testX = NSKeyValueChange.Insertion.rawValue
+            
+            if let valueChangeKind = change[NSKeyValueChangeKindKey] as? UInt
             {
-                println("\(hasNewSelectedFriends)")
+                if let changeKind = NSKeyValueChange(rawValue: valueChangeKind)
+                {
+                    switch(changeKind)
+                    {
+                    case .Setting:
+                        println("Setting")
+                        let newSelectedFriends = change[NSKeyValueChangeNewKey] as [GWMFriend]?
+                        updateView(newSelectedFriends)
+                        break;
+                    case .Insertion:
+                        println("Insertion")
+                        break;
+                    case .Removal:
+                        println("Removal")
+                        break;
+                    case .Replacement:
+                        println("Replacement")
+                        break;
+                    }
+                }
             }
-            println("no")
         }
     }
 }
