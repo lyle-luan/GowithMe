@@ -36,6 +36,11 @@ class GWMSelectedFriendsViewController: UIViewController
             }
         }
     }
+    
+    deinit
+    {
+        selectedFriends.removeObserver(self, forKeyPath: KVOSelectedFriendsList)
+    }
 }
 
 extension GWMSelectedFriendsViewController

@@ -14,15 +14,29 @@ class GWMSelectedFriendsModel: NSObject
     
     func addFriend(selectedFriend: GWMFriend)
     {
+        func isContainedFriend(friend: GWMFriend, friendsList: [GWMFriend]) -> Bool
+        {
+            //TODO: base on id, not name
+            for indexFriend in friendsList
+            {
+                if indexFriend.name == friend.name
+                {
+                    return true
+                }
+            }
+            return false
+        }
+        
         if let hasSelectedFriendsList = selectedFriendsList
         {
-            selectedFriendsList?.append(selectedFriend)
-//            mutableArrayValueForKey("selectedFriendsList").addObject(selectedFriend)
+            if !isContainedFriend(selectedFriend, hasSelectedFriendsList)
+            {
+                selectedFriendsList?.append(selectedFriend)
+            }
         }
         else
         {
             selectedFriendsList = [selectedFriend]
-//            setValue([selectedFriend], forKey: "selectedFriendsList")
         }
     }
     
