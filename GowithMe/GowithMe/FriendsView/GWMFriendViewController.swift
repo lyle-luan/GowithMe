@@ -51,8 +51,6 @@ class GWMFriendViewController: UIViewController
     func updateView(newSelectedFriends: [GWMFriendModel]?)
     {
         //TODO: update view
-        println("\(newSelectedFriends?.count)")
-        println("\(selectedFriends.allSelectedFriends().count)")
     }
     
     required init(coder aDecoder: NSCoder)
