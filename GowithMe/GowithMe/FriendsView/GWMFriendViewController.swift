@@ -15,12 +15,11 @@ class GWMFriendViewController: UIViewController
     private let actionsViewController = GWMActionsViewController()
     private let selectedFriends = GWMSelectedFriendsModel()
     
-//    override init()
-//    {
-//        super.init()
-//
-//        //TODO:KVO
-//    }
+    override init()
+    {
+        super.init(nibName: nil, bundle: nil)
+        selectedFriends.addObserver(self, forKeyPath: KVOSelectedFriendsList, options: .New, context: nil)
+    }
     
     override func viewDidLoad()
     {
@@ -49,10 +48,17 @@ class GWMFriendViewController: UIViewController
         view.addSubview(friendsTableView)
     }
     
-//    required init(coder aDecoder: NSCoder)
-//    {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    func updateView(newSelectedFriends: [GWMFriendModel]?)
+    {
+        //TODO: update view
+        println("\(newSelectedFriends?.count)")
+        println("\(selectedFriends.allSelectedFriends().count)")
+    }
+    
+    required init(coder aDecoder: NSCoder)
+    {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension GWMFriendViewController: UITableViewDataSource
@@ -119,4 +125,36 @@ extension GWMFriendViewController: UITableViewDelegate
 extension GWMFriendViewController
 {
     //TODO:KVO
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>)
+    {
+        if selectedFriends != (object as? GWMSelectedFriendsModel)
+        {
+            return
+        }
+        else if keyPath != KVOSelectedFriendsList
+        {
+            return
+        }
+        else
+        {
+            if let changeKindValue = change[NSKeyValueChangeKindKey] as? UInt
+            {
+                if let changeKind = NSKeyValueChange(rawValue: changeKindValue)
+                {
+                    switch(changeKind)
+                    {
+                    case .Setting:
+                        println("KVO Setting - friendVC")
+                        updateView(change[NSKeyValueChangeNewKey] as [GWMFriendModel]?)
+                    case .Removal:
+                        println("KVO Removal - friendVC")
+                    case .Replacement:
+                        println("KVO Replacement - friendVC")
+                    case .Insertion:
+                        println("KVO Insertion - friendVC")
+                    }
+                }
+            }
+        }
+    }
 }

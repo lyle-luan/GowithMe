@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let KVOSelectedFriendsList = "selectedFriendsList"
-
 class GWMSelectedFriendsViewController: UIViewController
 {
     var selectedFriends :GWMSelectedFriendsModel!
@@ -83,19 +81,15 @@ extension GWMSelectedFriendsViewController
                     switch(changeKind)
                     {
                     case .Setting:
-                        println("KVO Setting")
+                        println("KVO Setting - selectedFriendsVC")
                         let newSelectedFriends = change[NSKeyValueChangeNewKey] as [GWMFriendModel]?
                         updateView(newSelectedFriends)
-                        break;
                     case .Insertion:
-                        println("KVO Insertion")
-                        break;
+                        println("KVO Insertion - selectedFriendsVC")
                     case .Removal:
-                        println("KVO Removal")
-                        break;
+                        println("KVO Removal - selectedFriendsVC")
                     case .Replacement:
-                        println("KVO Replacement")
-                        break;
+                        println("KVO Replacement - selectedFriendsVC")
                     }
                 }
             }

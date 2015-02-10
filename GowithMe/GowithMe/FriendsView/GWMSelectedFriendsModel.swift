@@ -8,6 +8,8 @@
 
 import Foundation
 
+let KVOSelectedFriendsList = "selectedFriendsList"
+
 enum GWMSelecteFriendsResult
 {
     case Success
