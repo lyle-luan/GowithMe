@@ -14,22 +14,9 @@ class GWMSelectedFriendsModel: NSObject
     
     func addFriend(selectedFriend: GWMFriend)
     {
-        func isContainedFriend(friend: GWMFriend, friendsList: [GWMFriend]) -> Bool
-        {
-            //TODO: base on id, not name
-            for indexFriend in friendsList
-            {
-                if indexFriend.name == friend.name
-                {
-                    return true
-                }
-            }
-            return false
-        }
-        
         if let hasSelectedFriendsList = selectedFriendsList
         {
-            if !isContainedFriend(selectedFriend, hasSelectedFriendsList)
+            if !isContainedFriend(selectedFriend)
             {
                 selectedFriendsList?.append(selectedFriend)
             }
@@ -43,6 +30,46 @@ class GWMSelectedFriendsModel: NSObject
     func allSelectedFriends() -> [GWMFriend]?
     {
         return selectedFriendsList
+    }
+    
+    func removeSelectedFriend(atIndex index :Int)
+    {
+        selectedFriendsList?.removeAtIndex(index)
+    }
+    
+    func removeSelectedFriend(removeFriend :GWMFriend)
+    {
+        //TODO: base on id, not name, maybe should base on address
+        if let hasSelectedFriendsList = selectedFriendsList
+        {
+            if hasSelectedFriendsList.count > 0
+            {
+                for index in 0...hasSelectedFriendsList.count-1
+                {
+                    if hasSelectedFriendsList[index].name == removeFriend.name
+                    {
+                        selectedFriendsList?.removeAtIndex(index)
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
+    func isContainedFriend(friend: GWMFriend) -> Bool
+    {
+        //TODO: base on id, not name, maybe should base on address
+        if let hasSelectedFriendsList = selectedFriendsList
+        {
+            for indexFriend in hasSelectedFriendsList
+            {
+                if indexFriend.name == friend.name
+                {
+                    return true
+                }
+            }
+        }
+        return false
     }
 }
 

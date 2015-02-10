@@ -28,13 +28,43 @@ class GWMSelectedFriendsViewController: UIViewController
     
     func updateView(selectedFriends:[GWMFriend]?)
     {
-        if let selectedFriends = selectedFriends
+        func removeOriginalSelectedFriends()
         {
-            for friend in selectedFriends
+            for originalSelectedFriend in view.subviews
             {
-                println("friend name: \(friend.name)")
+                if originalSelectedFriend is GWMFriendIcon
+                {
+                    originalSelectedFriend.removeFromSuperview()
+                }
             }
         }
+        
+        if let selectedFriends = selectedFriends
+        {
+            if selectedFriends.count <= 0
+            {
+                removeOriginalSelectedFriends()
+            }
+            else
+            {
+                removeOriginalSelectedFriends()
+                for index in 0...selectedFriends.count-1
+                {
+                    let friendIcon = GWMFriendIcon(friendInfo: selectedFriends[index] as GWMFriend, index:index)
+                    var originalFrame = friendIcon.frame
+                    originalFrame.origin.x = CGFloat(index*100)
+                    friendIcon.frame = originalFrame
+                    view.addSubview(friendIcon)
+                    
+                    friendIcon.addTarget(self, action: "cancelSelectedFriend:", forControlEvents: .TouchUpInside)
+                }
+            }
+        }
+    }
+    
+    func cancelSelectedFriend(touchedButton: GWMFriendIcon)
+    {
+        selectedFriends.removeSelectedFriend(atIndex: touchedButton.tag)
     }
     
     deinit
@@ -53,8 +83,6 @@ extension GWMSelectedFriendsViewController
         }
         else if keyPath == KVOSelectedFriendsList
         {
-            let testX = NSKeyValueChange.Insertion.rawValue
-            
             if let valueChangeKind = change[NSKeyValueChangeKindKey] as? UInt
             {
                 if let changeKind = NSKeyValueChange(rawValue: valueChangeKind)
@@ -62,18 +90,18 @@ extension GWMSelectedFriendsViewController
                     switch(changeKind)
                     {
                     case .Setting:
-                        println("Setting")
+                        println("KVO Setting")
                         let newSelectedFriends = change[NSKeyValueChangeNewKey] as [GWMFriend]?
                         updateView(newSelectedFriends)
                         break;
                     case .Insertion:
-                        println("Insertion")
+                        println("KVO Insertion")
                         break;
                     case .Removal:
-                        println("Removal")
+                        println("KVO Removal")
                         break;
                     case .Replacement:
-                        println("Replacement")
+                        println("KVO Replacement")
                         break;
                     }
                 }

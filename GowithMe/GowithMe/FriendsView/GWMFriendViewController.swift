@@ -15,6 +15,13 @@ class GWMFriendViewController: UIViewController
     private let actionsViewController = GWMActionsViewController()
     private let selectedFriends = GWMSelectedFriendsModel()
     
+    override init()
+    {
+        super.init()
+        
+        //TODO:KVO
+    }
+    
     override func viewDidLoad()
     {
         var viewFrame = UIScreen.mainScreen().bounds
@@ -40,6 +47,11 @@ class GWMFriendViewController: UIViewController
         friendsTableViewFrame.size.height = viewFrame.size.height-actionViewFrame.size.height-selectedFriendViewFrame.size.height
         friendsTableView.frame = friendsTableViewFrame
         view.addSubview(friendsTableView)
+    }
+    
+    required init(coder aDecoder: NSCoder)
+    {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -78,7 +90,34 @@ extension GWMFriendViewController: UITableViewDelegate
 {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        func selectCell(cell: UITableViewCell?)
+        {
+            cell?.backgroundColor = UIColor.blueColor()
+        }
+        
+        func unSelectCell(cell: UITableViewCell?)
+        {
+            cell?.backgroundColor = UIColor.clearColor()
+        }
+        
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false
-        selectedFriends.addFriend(contacts.friendInCatalogue(catalogue: indexPath.section, number: indexPath.row))
+        let friendInfo = contacts.friendInCatalogue(catalogue: indexPath.section, number: indexPath.row)
+        if selectedFriends.isContainedFriend(friendInfo)
+        {
+            unSelectCell(tableView.cellForRowAtIndexPath(indexPath))
+            selectedFriends.removeSelectedFriend(friendInfo)
+        }
+        else
+        {
+            selectCell(tableView.cellForRowAtIndexPath(indexPath))
+            selectedFriends.addFriend(friendInfo)
+        }
+//        tableView.reloadData()
+//        tableView.reloadRowsAtIndexPaths(indexPath, withRowAnimation: .Automatic)
     }
+}
+
+extension GWMFriendViewController
+{
+    //TODO:KVO
 }
