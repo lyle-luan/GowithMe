@@ -8,108 +8,63 @@
 
 import Foundation
 
+enum GWMSelecteFriendsResult
+{
+    case Success
+    case Fail
+    case Repeat
+}
+
 class GWMSelectedFriendsModel: NSObject
 {
-    dynamic private var selectedFriendsList: [GWMFriend]?
+    dynamic private var selectedFriendsList = [GWMFriendModel]()
     
-    func addFriend(selectedFriend: GWMFriend)
+    func addFriend(selectedFriend: GWMFriendModel) -> GWMSelecteFriendsResult
     {
-        if let hasSelectedFriendsList = selectedFriendsList
+        if !isContainedFriend(selectedFriend)
         {
-            if !isContainedFriend(selectedFriend)
-            {
-                selectedFriendsList?.append(selectedFriend)
-            }
+            selectedFriendsList.append(selectedFriend)
+            return .Success
         }
         else
         {
-            selectedFriendsList = [selectedFriend]
+            return .Repeat
         }
     }
     
-    func allSelectedFriends() -> [GWMFriend]?
+    func allSelectedFriends() -> [GWMFriendModel]
     {
         return selectedFriendsList
     }
     
     func removeSelectedFriend(atIndex index :Int)
     {
-        selectedFriendsList?.removeAtIndex(index)
+        selectedFriendsList.removeAtIndex(index)
     }
     
-    func removeSelectedFriend(removeFriend :GWMFriend)
+    func removeSelectedFriend(removeFriend :GWMFriendModel)
     {
         //TODO: base on id, not name, maybe should base on address
-        if let hasSelectedFriendsList = selectedFriendsList
+        for index in 0..<selectedFriendsList.count
         {
-            if hasSelectedFriendsList.count > 0
+            if selectedFriendsList[index].name == removeFriend.name
             {
-                for index in 0...hasSelectedFriendsList.count-1
-                {
-                    if hasSelectedFriendsList[index].name == removeFriend.name
-                    {
-                        selectedFriendsList?.removeAtIndex(index)
-                        return
-                    }
-                }
+                selectedFriendsList.removeAtIndex(index)
+                return
             }
         }
     }
     
-    func isContainedFriend(friend: GWMFriend) -> Bool
+    private func isContainedFriend(friend: GWMFriendModel) -> Bool
     {
         //TODO: base on id, not name, maybe should base on address
-        if let hasSelectedFriendsList = selectedFriendsList
+        for indexFriend in selectedFriendsList
         {
-            for indexFriend in hasSelectedFriendsList
+            if indexFriend.name == friend.name
             {
-                if indexFriend.name == friend.name
-                {
-                    return true
-                }
+                return true
             }
         }
         return false
     }
-}
-
-extension GWMSelectedFriendsModel
-{
-//    override func valueForKey(key: String) -> AnyObject?
-//    {
-//        return selectedFriendsList
-//    }
-//    
-//    override func valueForUndefinedKey(key: String) -> AnyObject?
-//    {
-//        println("undefined key: \(key)")
-//        return selectedFriendsList
-//    }
-    
-//    func countOfSelectedFriendsList() -> Int
-//    {
-//        if let count = selectedFriendsList?.count
-//        {
-//            return count
-//        }
-//        else
-//        {
-//            return 0
-//        }
-//    }
-//    
-//    func objectInSelectedFriendsListAtIndex(index: Int) -> GWMFriend?
-//    {
-//        return selectedFriendsList?[index]
-//    }
-//    
-//    func insertObject(anFriend: GWMFriend, inSelectedFriendsListAtIndex index: Int)
-//    {
-//        selectedFriendsList?.insert(anFriend, atIndex: index)
-//    }
-//    
-//    func removeObjectFromSelectedFriendsListAtIndex(index :Int)
-//    {
-//        selectedFriendsList?.removeAtIndex(index)
-//    }
 }

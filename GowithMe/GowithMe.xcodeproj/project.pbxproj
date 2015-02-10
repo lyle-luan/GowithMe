@@ -24,12 +24,12 @@
 		936787281A7FC0D400600844 /* GWMMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787261A7FC0D400600844 /* GWMMapViewController.swift */; };
 		936787331A80F1CB00600844 /* GWMFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787321A80F1CB00600844 /* GWMFriendViewController.swift */; };
 		936787341A80F1CB00600844 /* GWMFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787321A80F1CB00600844 /* GWMFriendViewController.swift */; };
-		936787361A80F77000600844 /* GWMContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787351A80F77000600844 /* GWMContacts.swift */; };
-		936787371A80F77000600844 /* GWMContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787351A80F77000600844 /* GWMContacts.swift */; };
-		936787391A80F83E00600844 /* GWMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787381A80F83E00600844 /* GWMFriend.swift */; };
-		9367873A1A80F83E00600844 /* GWMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787381A80F83E00600844 /* GWMFriend.swift */; };
-		93E897F61A8898FE006BB096 /* GWMFriendIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E897F51A8898FE006BB096 /* GWMFriendIcon.swift */; };
-		93E897F71A8898FE006BB096 /* GWMFriendIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E897F51A8898FE006BB096 /* GWMFriendIcon.swift */; };
+		936787361A80F77000600844 /* GWMContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787351A80F77000600844 /* GWMContactsModel.swift */; };
+		936787371A80F77000600844 /* GWMContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787351A80F77000600844 /* GWMContactsModel.swift */; };
+		936787391A80F83E00600844 /* GWMFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787381A80F83E00600844 /* GWMFriendModel.swift */; };
+		9367873A1A80F83E00600844 /* GWMFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936787381A80F83E00600844 /* GWMFriendModel.swift */; };
+		93E897F61A8898FE006BB096 /* GWMFriendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E897F51A8898FE006BB096 /* GWMFriendIconView.swift */; };
+		93E897F71A8898FE006BB096 /* GWMFriendIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E897F51A8898FE006BB096 /* GWMFriendIconView.swift */; };
 		DD514BC21A78B84A004CF14D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD514BC11A78B84A004CF14D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +59,9 @@
 		936787231A7FC0B500600844 /* GWMAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GWMAnnotation.swift; path = MapView/GWMAnnotation.swift; sourceTree = "<group>"; };
 		936787261A7FC0D400600844 /* GWMMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GWMMapViewController.swift; path = MapView/GWMMapViewController.swift; sourceTree = "<group>"; };
 		936787321A80F1CB00600844 /* GWMFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriendViewController.swift; sourceTree = "<group>"; };
-		936787351A80F77000600844 /* GWMContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMContacts.swift; sourceTree = "<group>"; };
-		936787381A80F83E00600844 /* GWMFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriend.swift; sourceTree = "<group>"; };
-		93E897F51A8898FE006BB096 /* GWMFriendIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriendIcon.swift; sourceTree = "<group>"; };
+		936787351A80F77000600844 /* GWMContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMContactsModel.swift; sourceTree = "<group>"; };
+		936787381A80F83E00600844 /* GWMFriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriendModel.swift; sourceTree = "<group>"; };
+		93E897F51A8898FE006BB096 /* GWMFriendIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GWMFriendIconView.swift; sourceTree = "<group>"; };
 		DD514BC11A78B84A004CF14D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -158,9 +158,9 @@
 				9316AB391A8355440027AC7C /* GWMSelectedFriendsViewController.swift */,
 				9316AB3C1A83556B0027AC7C /* GWMActionsViewController.swift */,
 				9316AB3F1A83573A0027AC7C /* GWMSelectedFriendsModel.swift */,
-				936787351A80F77000600844 /* GWMContacts.swift */,
-				936787381A80F83E00600844 /* GWMFriend.swift */,
-				93E897F51A8898FE006BB096 /* GWMFriendIcon.swift */,
+				936787351A80F77000600844 /* GWMContactsModel.swift */,
+				936787381A80F83E00600844 /* GWMFriendModel.swift */,
+				93E897F51A8898FE006BB096 /* GWMFriendIconView.swift */,
 			);
 			path = FriendsView;
 			sourceTree = "<group>";
@@ -281,13 +281,13 @@
 			files = (
 				9316AB3A1A8355440027AC7C /* GWMSelectedFriendsViewController.swift in Sources */,
 				9344D12E1A739C1E00748031 /* AppDelegate.swift in Sources */,
-				936787391A80F83E00600844 /* GWMFriend.swift in Sources */,
+				936787391A80F83E00600844 /* GWMFriendModel.swift in Sources */,
 				936787241A7FC0B500600844 /* GWMAnnotation.swift in Sources */,
 				9316AB3D1A83556B0027AC7C /* GWMActionsViewController.swift in Sources */,
-				936787361A80F77000600844 /* GWMContacts.swift in Sources */,
+				936787361A80F77000600844 /* GWMContactsModel.swift in Sources */,
 				9316AB401A83573A0027AC7C /* GWMSelectedFriendsModel.swift in Sources */,
 				936787331A80F1CB00600844 /* GWMFriendViewController.swift in Sources */,
-				93E897F61A8898FE006BB096 /* GWMFriendIcon.swift in Sources */,
+				93E897F61A8898FE006BB096 /* GWMFriendIconView.swift in Sources */,
 				936787271A7FC0D400600844 /* GWMMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,13 +298,13 @@
 			files = (
 				9316AB3B1A8355440027AC7C /* GWMSelectedFriendsViewController.swift in Sources */,
 				9344D1441A739C1E00748031 /* GowithMeTests.swift in Sources */,
-				9367873A1A80F83E00600844 /* GWMFriend.swift in Sources */,
+				9367873A1A80F83E00600844 /* GWMFriendModel.swift in Sources */,
 				936787251A7FC0B500600844 /* GWMAnnotation.swift in Sources */,
 				9316AB3E1A83556B0027AC7C /* GWMActionsViewController.swift in Sources */,
-				936787371A80F77000600844 /* GWMContacts.swift in Sources */,
+				936787371A80F77000600844 /* GWMContactsModel.swift in Sources */,
 				9316AB411A83573A0027AC7C /* GWMSelectedFriendsModel.swift in Sources */,
 				936787341A80F1CB00600844 /* GWMFriendViewController.swift in Sources */,
-				93E897F71A8898FE006BB096 /* GWMFriendIcon.swift in Sources */,
+				93E897F71A8898FE006BB096 /* GWMFriendIconView.swift in Sources */,
 				936787281A7FC0D400600844 /* GWMMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

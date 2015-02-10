@@ -1,5 +1,5 @@
 //
-//  GWMContactsManager.swift
+//  GWMContactsModel.swift
 //  GowithMe
 //
 //  Created by Aaron on 2/3/15.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-class GWMContacts
+class GWMContactsModel
 {
-    private var contacts = [GWMFriend]()
+    private var contacts = [GWMFriendModel]()
     
     init()
     {
-        contacts.append(GWMFriend(name: "👄", telephone: ""))
-        contacts.append(GWMFriend(name: "🈚️", telephone: "123"))
-        contacts.append(GWMFriend(name: "🐶", telephone: "22"))
-        contacts.append(GWMFriend(name: "🐱", telephone: "43434"))
+        contacts.append(GWMFriendModel(name: "👄", telephone: ""))
+        contacts.append(GWMFriendModel(name: "🈚️", telephone: "123"))
+        contacts.append(GWMFriendModel(name: "🐶", telephone: "22"))
+        contacts.append(GWMFriendModel(name: "🐱", telephone: "43434"))
     }
     
     func numOfCatalogue() -> Int
@@ -56,7 +56,7 @@ class GWMContacts
 
     }
     
-    func friendInCatalogue(#catalogue: Int, number: Int) -> GWMFriend
+    func friendInCatalogue(catalogue: Int,ofNumber number: Int) -> GWMFriendModel
     {
         switch(catalogue)
         {

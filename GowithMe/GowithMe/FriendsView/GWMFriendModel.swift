@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GWMFriend
+class GWMFriendModel
 {
     private let id: Int = -1
     let name: String?

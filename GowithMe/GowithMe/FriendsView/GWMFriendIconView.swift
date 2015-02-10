@@ -8,9 +8,9 @@
 
 import UIKit
 
-class GWMFriendIcon: UIButton
+class GWMFriendIconView: UIButton
 {
-    init(friendInfo: GWMFriend, index: Int)
+    init(friendInfo: GWMFriendModel, index: Int)
     {
         super.init(frame: CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0))
         backgroundColor = UIColor.yellowColor()

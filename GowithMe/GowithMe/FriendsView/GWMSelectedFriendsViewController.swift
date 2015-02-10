@@ -26,13 +26,13 @@ class GWMSelectedFriendsViewController: UIViewController
         view.backgroundColor = UIColor.grayColor()
     }
     
-    func updateView(selectedFriends:[GWMFriend]?)
+    func updateView(selectedFriends:[GWMFriendModel]?)
     {
         func removeOriginalSelectedFriends()
         {
             for originalSelectedFriend in view.subviews
             {
-                if originalSelectedFriend is GWMFriendIcon
+                if originalSelectedFriend is GWMFriendIconView
                 {
                     originalSelectedFriend.removeFromSuperview()
                 }
@@ -41,28 +41,21 @@ class GWMSelectedFriendsViewController: UIViewController
         
         if let selectedFriends = selectedFriends
         {
-            if selectedFriends.count <= 0
+            removeOriginalSelectedFriends()
+            for index in 0..<selectedFriends.count
             {
-                removeOriginalSelectedFriends()
-            }
-            else
-            {
-                removeOriginalSelectedFriends()
-                for index in 0...selectedFriends.count-1
-                {
-                    let friendIcon = GWMFriendIcon(friendInfo: selectedFriends[index] as GWMFriend, index:index)
-                    var originalFrame = friendIcon.frame
-                    originalFrame.origin.x = CGFloat(index*100)
-                    friendIcon.frame = originalFrame
-                    view.addSubview(friendIcon)
-                    
-                    friendIcon.addTarget(self, action: "cancelSelectedFriend:", forControlEvents: .TouchUpInside)
-                }
+                let friendIcon = GWMFriendIconView(friendInfo: selectedFriends[index] as GWMFriendModel, index:index)
+                var originalFrame = friendIcon.frame
+                originalFrame.origin.x = CGFloat(index*100)
+                friendIcon.frame = originalFrame
+                view.addSubview(friendIcon)
+                
+                friendIcon.addTarget(self, action: "cancelSelectedFriend:", forControlEvents: .TouchUpInside)
             }
         }
     }
     
-    func cancelSelectedFriend(touchedButton: GWMFriendIcon)
+    func cancelSelectedFriend(touchedButton: GWMFriendIconView)
     {
         selectedFriends.removeSelectedFriend(atIndex: touchedButton.tag)
     }
@@ -91,7 +84,7 @@ extension GWMSelectedFriendsViewController
                     {
                     case .Setting:
                         println("KVO Setting")
-                        let newSelectedFriends = change[NSKeyValueChangeNewKey] as [GWMFriend]?
+                        let newSelectedFriends = change[NSKeyValueChangeNewKey] as [GWMFriendModel]?
                         updateView(newSelectedFriends)
                         break;
                     case .Insertion:

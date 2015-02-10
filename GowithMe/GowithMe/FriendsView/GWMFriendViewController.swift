@@ -10,17 +10,17 @@ import UIKit
 
 class GWMFriendViewController: UIViewController
 {
-    private let contacts = GWMContacts()
+    private let contacts = GWMContactsModel()
     private let selectedFriendsViewController = GWMSelectedFriendsViewController()
     private let actionsViewController = GWMActionsViewController()
     private let selectedFriends = GWMSelectedFriendsModel()
     
-    override init()
-    {
-        super.init()
-        
-        //TODO:KVO
-    }
+//    override init()
+//    {
+//        super.init()
+//
+//        //TODO:KVO
+//    }
     
     override func viewDidLoad()
     {
@@ -49,10 +49,10 @@ class GWMFriendViewController: UIViewController
         view.addSubview(friendsTableView)
     }
     
-    required init(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required init(coder aDecoder: NSCoder)
+//    {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }
 
 extension GWMFriendViewController: UITableViewDataSource
@@ -74,7 +74,7 @@ extension GWMFriendViewController: UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var friend = contacts.friendInCatalogue(catalogue: indexPath.section, number: indexPath.row)
+        var friend = contacts.friendInCatalogue(indexPath.section, ofNumber: indexPath.row)
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
         cell.textLabel.text = friend.name
         cell.detailTextLabel?.text = friend.telephone
@@ -101,19 +101,18 @@ extension GWMFriendViewController: UITableViewDelegate
         }
         
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false
-        let friendInfo = contacts.friendInCatalogue(catalogue: indexPath.section, number: indexPath.row)
-        if selectedFriends.isContainedFriend(friendInfo)
+        let friendInfo = contacts.friendInCatalogue(indexPath.section, ofNumber: indexPath.row)
+
+        switch(selectedFriends.addFriend(friendInfo))
         {
+        case .Success:
+            selectCell(tableView.cellForRowAtIndexPath(indexPath))
+        case .Fail:
+            return
+        case .Repeat:
             unSelectCell(tableView.cellForRowAtIndexPath(indexPath))
             selectedFriends.removeSelectedFriend(friendInfo)
         }
-        else
-        {
-            selectCell(tableView.cellForRowAtIndexPath(indexPath))
-            selectedFriends.addFriend(friendInfo)
-        }
-//        tableView.reloadData()
-//        tableView.reloadRowsAtIndexPaths(indexPath, withRowAnimation: .Automatic)
     }
 }
 
