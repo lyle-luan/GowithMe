@@ -106,6 +106,7 @@
 		9344D12A1A739C1E00748031 /* GowithMe */ = {
 			isa = PBXGroup;
 			children = (
+				93C857B21A8BA6D800D43729 /* ChatAndNavigateView */,
 				936787311A80F1A700600844 /* FriendsView */,
 				936787221A7FC07600600844 /* MapView */,
 				9344D12B1A739C1E00748031 /* Supporting Files */,
@@ -163,6 +164,13 @@
 				93E897F51A8898FE006BB096 /* GWMFriendIconView.swift */,
 			);
 			path = FriendsView;
+			sourceTree = "<group>";
+		};
+		93C857B21A8BA6D800D43729 /* ChatAndNavigateView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatAndNavigateView;
 			sourceTree = "<group>";
 		};
 		DD514BBE1A78B820004CF14D /* Frameworks */ = {

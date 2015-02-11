@@ -10,13 +10,16 @@ import UIKit
 
 class GWMFriendViewController: UIViewController
 {
+    //TODO: I will do addFriend here
+    
     private let contacts = GWMContactsModel()
     private let selectedFriendsViewController = GWMSelectedFriendsViewController()
-    private let actionsViewController = GWMActionsViewController()
+    private let actionsViewController: GWMActionsViewController
     private let selectedFriends = GWMSelectedFriendsModel()
     
     override init()
     {
+        actionsViewController = GWMActionsViewController.positionActions()
         super.init(nibName: nil, bundle: nil)
         selectedFriends.addObserver(self, forKeyPath: KVOSelectedFriendsList, options: .New, context: nil)
     }
@@ -80,7 +83,7 @@ extension GWMFriendViewController: UITableViewDataSource
     {
         var friend = contacts.friendInCatalogue(indexPath.section, ofNumber: indexPath.row)
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
-        cell.textLabel.text = friend.name
+        cell.textLabel?.text = friend.name
         cell.detailTextLabel?.text = friend.telephone
         if let photo = friend.photo
         {
