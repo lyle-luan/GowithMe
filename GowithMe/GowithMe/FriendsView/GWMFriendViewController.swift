@@ -83,7 +83,7 @@ extension GWMFriendViewController: UITableViewDataSource
     {
         var friend = contacts.friendInCatalogue(indexPath.section, ofNumber: indexPath.row)
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
-        cell.textLabel?.text = friend.name
+        cell.textLabel.text = friend.name
         cell.detailTextLabel?.text = friend.telephone
         if let photo = friend.photo
         {
